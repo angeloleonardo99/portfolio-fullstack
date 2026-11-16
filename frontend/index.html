@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgendaPro | Gestão de Reservas SaaS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-content">
+            <h1>Agenda<span>Pro</span></h1>
+            <span class="badge-mode" id="connection-status">Verificando API...</span>
+        </div>
+    </header>
+
+    <main class="container dashboard">
+        <!-- Cards de Resumo -->
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-label">Total de Reservas</span>
+                <strong class="metric-value" id="stat-total">0</strong>
+            </div>
+            <div class="metric-card">
+                <span class="metric-label">Confirmados</span>
+                <strong class="metric-value text-success" id="stat-confirmed">0</strong>
+            </div>
+            <div class="metric-card">
+                <span class="metric-label">Pendentes</span>
+                <strong class="metric-value text-warning" id="stat-pending">0</strong>
+            </div>
+        </section>
+
+        <div class="content-grid">
+            <!-- Formulário de Novo Agendamento -->
+            <section class="card form-section">
+                <h2>Novo Agendamento</h2>
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label for="client_name">Nome do Cliente</label>
+                        <input type="text" id="client_name" placeholder="Ex: Mariana Silva" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client_phone">Telefone / WhatsApp</label>
+                        <input type="tel" id="client_phone" placeholder="(47) 99999-9999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Serviço</label>
+                        <select id="service" required>
+                            <option value="Consultoria Técnica (1h)">Consultoria Técnica (1h)</option>
+                            <option value="Avaliação Inicial (45min)">Avaliação Inicial (45min)</option>
+                            <option value="Atendimento Especializado">Atendimento Especializado</option>
+                            <option value="Manutenção / Retorno">Manutenção / Retorno</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Data</label>
+                            <input type="date" id="date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="time">Horário</label>
+                            <select id="time" required>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="feedback-msg" class="feedback hidden"></div>
+
+                    <button type="submit" class="btn-primary">Reservar Horário</button>
+                </form>
+            </section>
+
+            <!-- Painel Administrativo de Agenda -->
+            <section class="card list-section">
+                <div class="list-header">
+                    <h2>Agenda de Atendimentos</h2>
+                    <div class="filters">
+                        <input type="date" id="filter-date" title="Filtrar por data">
+                        <select id="filter-status">
+                            <option value="Todos">Todos os Status</option>
+                            <option value="Pendente">Pendentes</option>
+                            <option value="Confirmado">Confirmados</option>
+                            <option value="Cancelado">Cancelados</option>
+                        </select>
+                        <button type="button" id="btn-clear-filters" class="btn-secondary">Limpar</button>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data / Hora</th>
+                                <th>Cliente</th>
+                                <th>Serviço</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointments-list">
+                            <!-- Preenchido via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
