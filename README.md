@@ -13,7 +13,7 @@ Aplicação web Full Stack desenvolvida para gestão de agendamentos e reservas 
 
 ---
 
-## 🎯 Funcionalidades e Regras de Negócio
+## Funcionalidades e Regras de Negócio
 
 * **Bloqueio de Conflito de Horários:** O back-end valida automaticamente se já existe uma reserva ativa (`Pendente` ou `Confirmado`) para a mesma data e horário antes de inserir no banco de dados (retornando HTTP `409 Conflict`).
 * **Dashboard de Métricas:** Contabilização em tempo real do total de reservas, atendimentos confirmados e pendentes.
@@ -22,7 +22,7 @@ Aplicação web Full Stack desenvolvida para gestão de agendamentos e reservas 
 
 ---
 
-## 🔌 Endpoints da API RESTful
+## Endpoints da API RESTful
 
 | Método | Rota | Descrição |
 | :--- | :--- | :--- |
