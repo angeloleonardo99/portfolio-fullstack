@@ -7,7 +7,7 @@
 
 Aplicação web Full Stack desenvolvida para gestão de agendamentos e reservas de serviços, implementando validação de conflitos de horário no back-end, painel administrativo com filtros dinâmicos e persistência relacional.
 
-🔗 🔗 **[Testar Demonstração Online (GitHub Pages)](https://angeloleonardo99.github.io/portfolio-fullstack/)**
+🔗 **[Testar Demonstração Online (GitHub Pages)](https://angeloleonardo99.github.io/portfolio-fullstack/)**
 <img width="1266" height="720" alt="image" src="https://github.com/user-attachments/assets/561e7186-dad5-461b-9c96-e89bcbdc70a3" />
 
 
